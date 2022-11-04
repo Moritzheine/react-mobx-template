@@ -6,10 +6,7 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:import/errors",
-        "plugin:import/warnings",
-        "plugin:import/typescript"
+        "plugin:@typescript-eslint/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -20,15 +17,52 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react",
         "@typescript-eslint"
     ],
     "rules": {
-        "react/self-closing-comp": "error"
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "react/self-closing-comp": "error",
+        "indent": "off",
+        "@typescript-eslint/indent": [
+            "error",
+            2,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "quotes": [
+            "error",
+            "double"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "object-curly-spacing": [
+            "error",
+            "always"
+        ],
+        "key-spacing": [
+            2,
+            {
+                "singleLine": {
+                    "beforeColon": false,
+                    "afterColon": true
+                },
+                "multiLine": {
+                    "beforeColon": true,
+                    "afterColon": true,
+                    "align": "colon"
+                }
+            }
+        ]
     },
     "settings": {
         "react": {
-            "version": "detect"
+            "version": "detect" // React version. "detect" automatically picks the version you have installed
         }
     }
 }
