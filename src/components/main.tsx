@@ -1,7 +1,7 @@
 import { observer } from "mobx-react-lite";
 import React, { FC, ReactElement } from "react";
 
-import logo from "../logo.svg"
+import logo from "../logo.svg";
 
 
 const Main: FC = (): ReactElement => {
@@ -22,7 +22,7 @@ const Main: FC = (): ReactElement => {
         </a>
       </header>
     </div>
-  )
-}
+  );
+};
 
 export default observer(Main);

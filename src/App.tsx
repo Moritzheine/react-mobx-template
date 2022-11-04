@@ -1,7 +1,7 @@
-import React, { FC, ReactElement } from 'react';
-import './App.css';
-import { RootStore, StoreContext } from './stores';
-import Main from './components/main';
+import React, { FC, ReactElement } from "react";
+import "./App.css";
+import { RootStore, StoreContext } from "./stores";
+import Main from "./components/main";
 
 const App: FC = (): ReactElement => {
   const stores = new RootStore();
@@ -10,7 +10,7 @@ const App: FC = (): ReactElement => {
     <StoreContext.Provider value={stores}>
       <Main />
     </StoreContext.Provider>
-  )
-}
+  );
+};
 
 export default App;

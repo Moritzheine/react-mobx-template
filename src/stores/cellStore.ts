@@ -1,10 +1,10 @@
-import { makeAutoObservable } from "mobx"
+import { makeAutoObservable } from "mobx";
 
 
 export class CellStore {
 
-    constructor() {
-        makeAutoObservable(this)
-    }
+  constructor() {
+    makeAutoObservable(this);
+  }
 
 }
