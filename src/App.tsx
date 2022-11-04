@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from "react";
 import "./App.css";
 import { RootStore, StoreContext } from "./stores";
-import Main from "./components/main";
+import { Main } from "./components";
 
 const App: FC = (): ReactElement => {
   const stores = new RootStore();
