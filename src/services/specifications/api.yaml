@@ -1,0 +1,108 @@
+openapi: 3.0.3
+info:
+  title: Title
+  description: |-
+    API Definition of the Backend
+  version: 1.0.0
+servers:
+  - url: localhost:3000
+tags:
+  - name: cell
+  - name: project
+
+paths:
+  /cells:
+    get:
+      tags:
+        - cell
+      summary: Get List of Cells
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Cell"
+    post:
+      tags:
+        - cell
+      summary: Create a new Cell in the DB
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Cell"
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cell"
+  /cells/{cellId}:
+    get:
+      tags:
+        - cell
+      summary: Find Cell by ID
+      description: Returns a single Cell
+      parameters:
+        - name: cellId
+          in: path
+          description: ID of Cell to return
+          required: true
+          schema:
+            type: number
+      responses:
+        "200":
+          description: Success
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Cell"
+components:
+  schemas:
+    Cell:
+      type: object
+      properties:
+        id:
+          type: string
+          example: cellId123
+        projectId:
+          type: string
+          example: projectId123
+        typeId:
+          type: string
+          example: ZellTyp1
+      required:
+        - id
+    Project:
+      type: object
+      properties:
+        id:
+          type: string
+          example: projectId123
+        name:
+          type: string
+          example: projekt1
+        description:
+          type: string
+          example: Batterie Projekt Beschreibung
+      required:
+        - id
+    CellType:
+      type: object
+      properties:
+        id:
+          type: string
+          example: ZellTyp1
+        nennkapazitaet:
+          type: number
+          example: 1
+        nennspannung:
+          type: number
+          example: 3.7
+      required:
+        - id

@@ -21,7 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "lint": "yarn run eslint ./src/ --ext .js --ext .ts --ext .tsx --fix"
+    "lint:fix": "npx eslint --fix .",
+    "gen:client": "openapi-generator-cli generate -i src/services/specifications/api.yml -g typescript-fetch -o src/services/clients/http/openapi/api-service -c src/services/clients/http/openapi/config.yaml"
   },
   "eslintConfig": {
     "extends": [
